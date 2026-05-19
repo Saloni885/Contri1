@@ -319,7 +319,13 @@ function initRockPaperScissor() {
     resetBtn.addEventListener('click', () => {
         playerScore = 0;
         computerScore = 0;
+        stats.gamesPlayed = 0;
+        stats.wins = 0;
+        stats.losses = 0;
+        stats.currentStreak = 0;
         updateScore();
+        updateStatsDisplay();
+        saveRpsStats();
         document.getElementById('resultMessage').textContent = 'Make your choice!';
         document.getElementById('playerChoice').textContent = '❓';
         document.querySelectorAll('.comp-card').forEach(card => {
