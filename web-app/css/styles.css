@@ -1875,21 +1875,23 @@ body.sidebar-active .hero-controls {
 }
 
 .timeline-svg-track {
-  stroke: var(--border);
-  stroke-width: 6px;
+  stroke: var(--text-tertiary);
+  stroke-width: 3px;
   stroke-linecap: round;
-  stroke-dasharray: 0 16;
-  opacity: 0.8;
+  /* dot · gap: tiny dot, generous gap → sparse dotted look */
+  stroke-dasharray: 3 20;
+  opacity: 0.35;
   transition: stroke var(--duration-base) ease;
 }
 
 .timeline-svg-fill {
   stroke: var(--accent);
-  stroke-width: 6px;
+  stroke-width: 3px;
   stroke-linecap: round;
-  stroke-dasharray: 0 16;
+  stroke-dasharray: 3 20;
+  /* dashoffset animated by JS; starts at full length (path not drawn) */
   transition: stroke var(--duration-base) ease;
-  filter: drop-shadow(0 0 8px var(--accent));
+  filter: drop-shadow(0 0 6px var(--accent-glow));
 }
 
 /* Ensure timeline grid elements overlap properly */
